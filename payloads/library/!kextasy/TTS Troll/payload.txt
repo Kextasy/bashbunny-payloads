@@ -1,0 +1,43 @@
+# CREATED BY: KEXTASY
+# PURPOSE: Turns windows volume all the way up and plays a TTS message
+
+
+#!/bin/bash
+
+# Switch to ATTACK mode
+ATTACKMODE HID STORAGE
+
+
+LED G
+
+Q DELAY 1000
+Q GUI r
+
+Q DELAY 1000
+
+Q STRING "powershell"
+Q ENTER
+
+Q DELAY 2000
+
+LED B
+
+Q STRING "Function Set-Speaker(\$Volume){\$wshShell = new-object -com wscript.shell;1..50 | % {\$wshShell.SendKeys([char]174)};1..\$Volume | % {\$wshShell.SendKeys([char]175)}}"
+Q ENTER
+Q DELAY 800
+Q STRING "Set-Speaker -Volume 50"
+Q ENTER
+Q DELAY 800
+
+
+Q STRING "Add-Type -AssemblyName System.speech"
+Q ENTER
+Q DELAY 800
+Q STRING "\$speak = New-Object System.Speech.Synthesis.SpeechSynthesizer"
+Q ENTER 
+Q DELAY 800
+Q STRING "\$speak.Speak('What up little bitch boy. You a bitch. A little bitch boy. Say it with me. I am a bitch boy. You fucking bitch boy ')"
+
+Q ENTER
+
+LED FINISH

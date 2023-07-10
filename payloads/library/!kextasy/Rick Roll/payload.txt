@@ -1,0 +1,33 @@
+#     Title: Rick Roll Simple
+
+#     Author: Kextasy
+
+#     Description: Will open powershell and open a default browser and play the url 
+
+#     Target: Windows 10, 11
+
+#     --------------------------------------------------------------------------------------
+#     THIS PAYLOAD IS PLUG AND PLAY. NO MODIFICATIONS NEEDED SIMPLY RUN THE CODE DOWN BELOW.
+#     --------------------------------------------------------------------------------------
+
+LED SETUP 
+
+ATTACKMODE HID STORAGE
+
+LED G
+
+QUACK DELAY 1000
+QUACK GUI r
+QUACK DELAY 1000
+
+
+
+LED B
+
+QUACK STRING powershell -w h -NoP -NonI -W Hidden Start-Process "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+QUACK ENTER
+# QUACK DELAY 3500
+# QUACK STRING "powershell "
+QUACK DELAY 400
+# QUACK ENTER
+LED FINISH
